@@ -4,20 +4,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class GameLogic {
     static Scanner scanner = new Scanner(System.in);
-    static Wizard wizard;
-    static Wand wand;
-    static SortingHat sortingHat;
-    static House house;
-    static House getHouse(){
-        return house;
-    }
-    static Pet pet;
 
-    static Pet getPet() {
-        return pet;
-    }
-    static Spell knownspell;
-    static Potion potions;
 
     public static int choice(String prompt, int userChoices) {
         int input;
@@ -69,14 +56,5 @@ public class GameLogic {
                 nameSet=true;
         }while (!nameSet);
         System.out.println("Welcome to Harry Poter at home, you are now a young wizard, congratulation !");
-        System.out.println("which core do you want for your wand ?");
-        int input = choice("Phenix (1) or dragon (2)",2);
-                if(input==1){
-                    wand = new Wand(Core.PHOENIX_FEATHER,10);
-                }else wand= new Wand(Core.DRAGON_HEARTSTRING,10);
-
-                System.out.println("You are a "+ house);//refaire
-                //wizard = new Wizard(name,100,wand,pet,house, (List<Spell>) knownspell, (List<Potion>) potions);
-                //verifier l'intitialisation du sorcier
     }
 }
