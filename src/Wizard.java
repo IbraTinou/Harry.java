@@ -6,13 +6,13 @@ public class Wizard extends Character{
     private Wand wand;
     private House house;
     private ArrayList<Spell> knownspell;
-    private ArrayList<Potion> potions;
+    private List<Potion> potions;
 
     public int defend() {
         return 0;
     }
 
-    public Wizard(String name, int maxHp, Pet pet, List<Spell> knownspell, List<Potion>potions) {
+    public Wizard(String name, int maxHp, Pet pet, ArrayList<Spell> knownspell, List<Potion>potions) {
         super(name, maxHp);
         this.house = SortingHat.houseAllocation();
         this.wand = wand;
@@ -29,11 +29,6 @@ public class Wizard extends Character{
 
     @Override
     public int attack() {
-        return 0;
-    }
-
-    @Override
-    public int accuracy() {
         return 0;
     }
 }
