@@ -125,6 +125,12 @@ public class GameLogic {
         Wand selectedWand = getRandomWand();
         System.out.println("Your wand is "+ selectedWand);
 
-        //Wizard wizard = new Wizard(username, 10, )
+        Wizard wizard = new Wizard(username, 10, selectedPet, selectedWand);
+        System.out.println("Your are "+ wizard);
+
+        // Create an example of spell
+        Spell newSpell = new Spell("Test", 0.4);
+        wizard.addKnownSpell(newSpell);
+        System.out.println("Allowed spells "+ wizard.getKnownspell());
     }
 }
