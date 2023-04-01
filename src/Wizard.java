@@ -12,23 +12,41 @@ public class Wizard extends Character{
         return 0;
     }
 
-    public Wizard(String name, int maxHp, Pet pet, ArrayList<Spell> knownspell, List<Potion>potions) {
+    public Wizard(String name, int maxHp, Pet pet, Wand wand) {
         super(name, maxHp);
         this.house = SortingHat.houseAllocation();
         this.wand = wand;
         this.pet = pet;
-        this.knownspell = (ArrayList<Spell>) knownspell;
-        this.potions= (ArrayList<Potion>) potions;
+        this.knownspell = new ArrayList<Spell>();
+        this.potions= new ArrayList<Potion>();
     }
 
+    public String toString(){
+        return "Wizard :" + this.name + " with MaxHP " + this.maxHp;
+    }
 
     public void setWand(Wand wand){
         this.wand = wand;
     }
-    
 
+    // Attacks methods
     @Override
-    public int attack() {
+    public int attack(Character character) {
         return 0;
     }
+
+    @Override
+    public int attack(Character character, Spell spell) {
+        return 0;
+    }
+
+    public void addKnownSpell(Spell spell){
+        this.knownspell.add(spell);
+    }
+
+    public ArrayList<Spell> getKnownspell(){
+        return this.knownspell;
+    }
+
+
 }
