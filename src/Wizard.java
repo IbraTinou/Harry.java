@@ -12,7 +12,7 @@ public class Wizard extends Character{
         return 0;
     }
 
-    public Wizard(String name, int maxHp, Pet pet, Wand wand) {
+    public Wizard(String name, int maxHp, Pet pet, Wand wand,House house) {
         super(name, maxHp);
         this.house = SortingHat.houseAllocation();
         this.wand = wand;
@@ -29,7 +29,16 @@ public class Wizard extends Character{
         this.wand = wand;
     }
 
+    public Wand getWand(){
+        return this.wand;
+    }
+
     // Attacks methods
+    //@Override
+    //public int attack(Character character, Spell speel) {
+    //    return 0;
+    // }
+
     @Override
     public int attack(Character character) {
         return 0;
@@ -37,6 +46,19 @@ public class Wizard extends Character{
 
     @Override
     public int attack(Character character, Spell spell) {
+        int spellPower = spell.getPower();
+        double spellAccuracy = spell.getAccuracy();
+        double houseAttackRate = this.house.getAttackRate();
+        //double houseAttackRate = 0.97;
+        double houseAccuracyRate = this.house.getAccuracyRate();
+        //double houseAccuracyRate = 0.97;
+        int impactOfHP = (int)(spellPower*houseAttackRate); // HP to remove to the character
+        double successRate = (int)((Math.random()*2 + houseAccuracyRate) * spellAccuracy);
+
+        if (successRate == 1){
+          character.hitMe(impactOfHP);
+          return impactOfHP;
+        }
         return 0;
     }
 
@@ -47,6 +69,10 @@ public class Wizard extends Character{
     public ArrayList<Spell> getKnownspell(){
         return this.knownspell;
     }
+    public void AddPotions(Potion potion){this.potions.add(potion);}
+    public List<Potion> getPotions(){return  this.potions;}
 
-
+    public House getHouse(){
+        return this.house;
+    }
 }

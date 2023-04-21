@@ -9,20 +9,21 @@ public class SortingHat {
 
         switch (random){
             case 0:
-                house = House.GRYFFINDOR;
+                house = new House("GRYFFINDOR", 10, 15, 0, 10);
                 break;
             case 1:
-                house = House.SLYTHERIN;
+                house = new House("SLYTHERIN", 15, 10, 0, 10);
                 break;
             case 2:
-                house = House.HUFFLEPUFF;
+                house = new House("HUFFLEPUFF", 10, 10, 0, 15);
                 break;
             case 3:
-                house = House.RAVENCLOW;
+                house = new House("RAVENCLOW", 10, 10, 0.25, 10);
                 break;
         }
 
         return house;
+
     }
 }
 

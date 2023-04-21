@@ -15,7 +15,7 @@ private int size;
         return size;
     }
     public Core getCore() {
-        return core;
+        return this.core;
     }
 
 }

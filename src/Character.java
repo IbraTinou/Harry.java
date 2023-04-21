@@ -10,4 +10,13 @@ public abstract class Character {
         this.maxHp = maxHp;
         this.hp = maxHp;
     }
+
+    public void hitMe(int impactOfHp){
+        int diff = this.hp - impactOfHp;
+        if (diff > 0){
+            this.hp = diff;
+        } else {
+            this.hp = 0;
+        }
+    }
 }
